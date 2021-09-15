@@ -7,7 +7,7 @@ public class Queue {
 
     public Queue(){
         capacity=5;
-        front=rear=1;
+        front=rear=-1;
         num=new int[capacity];
     }
 
