@@ -35,11 +35,12 @@ public class Queue {
         }
     }
 
-    public int dequeue(){ 
+    public int dequeue(){
+        int val =0;
         if(isFull()){
             System.out.println("Queue is full!");
         } else{
-            int val=num[front];
+            val=num[front];
             for(int i=0;i<rear;i++){  //cascade delete
                 num[i]=num[i+1];
             }
