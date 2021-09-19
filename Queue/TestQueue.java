@@ -12,11 +12,10 @@ public class TestQueue{
         while (option!="End"){
             option = JOptionPane.showInputDialog(null, "Please choose ", "Example 1",
                 JOptionPane.QUESTION_MESSAGE, null, new Object[] { "Enqueue", "Dequeue", "End" }, "Enqueue");
-            int val = Integer.parseInt(JOptionPane.showInputDialog("Enter data: "));
             if (option=="Enqueue"){
+                int val = Integer.parseInt(JOptionPane.showInputDialog("Enter data: "));
                 q.enqueue(val);
-                String msg = "Inserted "+val+". New queue is:"+q.display();
-                JOptionPane.showMessageDialog(null, msg);
+                JOptionPane.showMessageDialog(null, "Inserted "+val+". New queue is:"+q.display());
                 continue;
             } else if (option == "Dequeue"){
                 q.dequeue();

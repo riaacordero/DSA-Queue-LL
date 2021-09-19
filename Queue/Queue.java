@@ -52,7 +52,7 @@ public class Queue {
 
     public String display(){
         String hold = "";
-        for(int i=0;i<rear;i++){  //cascade delete
+        for(int i=0;i<=rear;i++){  //cascade delete
             hold+=num[i]+" ";
         }
         return hold;
