@@ -26,8 +26,8 @@ public class Queue {
 
     public void enqueue(int data){
         rear++;
-        if(isEmpty()){
-            errorMsg("Queue is empty!");
+        if(isFull()){
+            errorMsg("Queue is full!");
         } else{
             front = 0;
             num[rear]=data;
@@ -36,11 +36,11 @@ public class Queue {
 
     public int dequeue(){
         int val =0;
-        if(isFull()){
-            errorMsg("Queue is full!");
+        if(isEmpty()){
+            errorMsg("Queue is empty!");
         } else{
             val=num[front];
-            for(int i=0;i<=rear;i++){  //cascade delete
+            for(int i=0;i<rear;i++){  //cascade delete
                 num[i]=num[i+1];
             }
             rear--;  // hides the last/rear value
