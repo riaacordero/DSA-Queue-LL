@@ -1,9 +1,14 @@
 package Queue;
+
+import javax.swing.JOptionPane;
+
 public class Queue {
     //FIFO (First-in, First-out)
 
     private int num[];
     private int front,rear,capacity;
+
+    // ========= CONSTRUCTOR =========
 
     public Queue(){
         capacity=5;
@@ -17,18 +22,12 @@ public class Queue {
         num=new int[capacity];
     }
 
-    public boolean isEmpty(){
-        return rear==-1;
-    }
-
-    public boolean isFull(){
-        return rear==capacity-1;
-    }
+   // ========= TRANSFORMERS =========    
 
     public void enqueue(int data){
         rear++;
         if(isEmpty()){
-            System.out.println("Queue is empty!");
+            errorMsg("Queue is empty!");
         } else{
             front = 0;
             num[rear]=data;
@@ -38,16 +37,18 @@ public class Queue {
     public int dequeue(){
         int val =0;
         if(isFull()){
-            System.out.println("Queue is full!");
+            errorMsg("Queue is full!");
         } else{
             val=num[front];
-            for(int i=0;i<rear;i++){  //cascade delete
+            for(int i=0;i<=rear;i++){  //cascade delete
                 num[i]=num[i+1];
             }
             rear--;  // hides the last/rear value
         }
         return val;
     }
+
+    // ========= OBSERVERS =========    
 
     public String display(){
         String hold = "";
@@ -56,4 +57,51 @@ public class Queue {
         }
         return hold;
     }
+
+    public boolean isEmpty(){
+        return rear==-1;
+    }
+
+    public boolean isFull(){
+        return rear==capacity-1;
+    }
+
+    private void errorMsg(String msg){
+        JOptionPane.showMessageDialog(null, msg, "Full", JOptionPane.ERROR_MESSAGE);
+    }
+
+    public int frontVal(){
+        return num[front];
+    }
+
+    public int rearVal(){
+        return num[rear];
+    }
+
+    public int peek(){
+        if (isEmpty()){
+            errorMsg("Queue is empty!");
+            return -1;
+        } else{
+            return num[front];
+        }
+    }
+
+    public int last(){
+        if (isEmpty()){
+            System.out.println("Queue is empty!");
+            return -1;
+        } else{
+            return num[rear];
+        }    
+    }
+
+    public int getCurrentSize(){
+        return capacity-(capacity-(rear+1));
+    }
+
+    public int getCapacity(){
+        return capacity;
+    }
+
 }
