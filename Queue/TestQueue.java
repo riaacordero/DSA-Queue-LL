@@ -28,13 +28,15 @@ public class TestQueue{
                 continue;
             } else if (option == "Dequeue"){
                 String msg ="";
+                int first = q.frontVal();
+                String prevQueue = q.display();
                 if (q.isEmpty()){
                     msg= "Queue is empty! Try enqueuing.";
                     JOptionPane.showMessageDialog(null, msg, "Dialog",
                         JOptionPane.ERROR_MESSAGE);
                 }else{
                     q.dequeue();
-                    msg = "\nEmpty: "+q.isEmpty()+"\nFull: "+q.isFull()+"\nCapacity: "+q.getCapacity()+"\nCurrent size: "+q.getCurrentSize()+"\nPeek: "+q.peek()+"\nLast: "+q.last()+"\nCurrent Elements: "+q.display();
+                    msg = "Removed: "+first+"\nEmpty: "+q.isEmpty()+"\nFull: "+q.isFull()+"\nCapacity: "+q.getCapacity()+"\nCurrent size: "+q.getCurrentSize()+"\nPeek: "+q.peek()+"\nLast: "+q.last()+"\nPrevious Queue: "+prevQueue+"\nCurrent Elements: "+q.display();
                     JOptionPane.showMessageDialog(null, msg);
                 }
                 continue;
