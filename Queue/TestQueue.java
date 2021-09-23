@@ -1,6 +1,5 @@
 package Queue;
-// Queue is a concrete method (contains a prototype and a body)
-// Abstract methods are methods without a body
+//@author: Ria Millicent Cordero
 
 import javax.swing.JOptionPane;
 

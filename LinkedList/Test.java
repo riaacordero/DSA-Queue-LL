@@ -2,32 +2,28 @@ package LinkedList;
 
 import java.util.*;
 
+import LinkedList.*;
+
 public class Test {
     public static void main(String[] args) {
         LinkedList ll = new LinkedList();       // Built-In
-        LinkedList node = new LinkedList();     // ADT
-    
-        // USING BUILT-IN
-        ll.addFirst(5);
-        ll.addFirst(6);
-        ll.addFirst(13);
-        ll.addFirst(64);
-
-        System.out.println(ll);
+        LNode node = new LNode();     // ADT
 
         // REVERSE-ENGINEERED ADT
-        node.addAtFirst(5);
-        node.addAtFirst(6);
-        node.addAtFirst(13);
-        node.addAtFirst(64);
-
-        node.addAtLast("Hello");
-
+        node.addAtFirst(12);
+        node.addAtFirst(45);
+        node.addAtFirst(7);
+        node.addAtLast(45);
+        node.addAtLast(17);
         System.out.println(node.traverse());
-
-        node.addAtLast("World");
-        node.deleteFirst();
+        node.addAtPosition(49, 2);
         System.out.println(node.traverse());
+        node.deleteAtLast();    // error
+        System.out.println(node.traverse());
+        System.out.println(node.getFirst());
+        System.out.println(node.getLast());
+        System.out.println(node.get(3));
+
 
 
     }
