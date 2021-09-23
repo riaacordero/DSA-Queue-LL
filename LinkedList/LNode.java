@@ -95,11 +95,11 @@ public class LNode {
             visit=link=head;
             int ctr=1;
             while (ctr!=position){
-                visit=visit.next;
+                link = link.next;
                 ctr++;
             }
             while(link.next!=visit){
-                link = link.next;
+                visit=visit.next;
             }
             LNode newNode = new LNode();
             newNode.data=data;
