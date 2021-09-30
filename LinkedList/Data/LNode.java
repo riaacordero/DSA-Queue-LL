@@ -122,17 +122,15 @@ public class LNode {
         if(isEmpty()){
             errorMsg("LinkedList is empty!");
         } else{
-            LNode visit, link;
-            visit=link=head;
-            while(visit.next != null){
-                visit = visit.next;
+            LNode link1, link2;
+            link1=head;
+            while(link1.next.next!=null){
+                link1 = link1.next;
             }
-            while(visit.next==null){
-                link = link.next;
-            }
-            link = null;
+            link2 = link1.next;
+            link1.next = null;
+            System.out.println("Deleting successful!");
         }
-        System.out.println("Deleting successful!");
     }
 
     public void deleteAtPosition(int position){

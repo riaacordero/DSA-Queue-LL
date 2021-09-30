@@ -11,18 +11,13 @@ public class Test {
 
         // REVERSE-ENGINEERED ADT
         node.addAtFirst(12);
-        node.addAtFirst(45);
-        node.addAtFirst(7);
-        node.addAtLast(45);
-        node.addAtLast(17);
+        node.addAtFirst(24);
+        node.addAtFirst(36);
+        node.addAtFirst(48);
         System.out.println(node.traverse());
-        node.addAtPosition(49, 2);
+        node.deleteAtLast();
         System.out.println(node.traverse());
-        node.deleteAtLast();    // error
-        System.out.println(node.traverse());
-        System.out.println(node.getFirst());
-        System.out.println(node.getLast());
-        System.out.println(node.get(3));
+
 
 
 
